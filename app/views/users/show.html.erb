@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <aside class="span4">
+	<section>
+
+		<h1>
+		  <img src="#" />
+
+		  <%= @user.name %>
+
+
+		  <%= @user.email %>
+		</h1>
+	</section>
+	<section>
+	  <%= render 'shared/stats' %>
+	</section>
+
+  </aside>
+  <div class="span8">
+	<%= render 'follow_form' if signed_in? %>
+	<% if @microposts.any? %>
+		<h3>Microposts (<%= @microposts.count %>)</h3>
+		<ol class="microposts">
+		  <%= render @microposts %>
+
+
+		</ol>
+
+	<% end %>
+  </div>
+
+</div>
